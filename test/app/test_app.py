@@ -53,5 +53,9 @@ def test_format_and_send_message():
 
 def test_update_subscriptions():
     data_access_service.fetch_subscriber_data = MagicMock()
+    data_access_service.fetch_subscriber_data.return_value.users.return_value = ['a', 'b']
     app._update_users_subscriptions = MagicMock()
-    
+    r = MagicMock()
+    app.update_subscriptions(r)
+    data_access_service.fetch_subscriber_data.assert_called_once_with(r)
+    app._update_users_subscriptions.assert_called()
