@@ -1,4 +1,0 @@
-CLIENT_ID = '0YBnx3_H63C3yA'
-CLIENT_SECRET = '0E5cA8hQBQ6omKqaGr9DdSntD-8'
-REDDIT_USER = '32-Levels'
-REDDIT_PASS = 'Powerthirst1!'
