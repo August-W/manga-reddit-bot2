@@ -13,11 +13,13 @@ ________________________________________________________________________________
 You will need to send a message to /r/Manga-Subscriber-Bot with the subject "subscribe" or "unsubscribe". The content of the message will be a list of manga
 For example:
 
-*SUBJECT:* 
-*subscribe*
-*BODY:*
-*kaguya-sama*
-*29 to JK*
+```
+SUBJECT: 
+subscribe
+BODY:
+kaguya-sama
+29 to JK
+```
 
 Your list should contain one manga per line. Neither the subject nor manga titles are case-sensitive.
 You do not need to list the full manga title - this bot will simply check that the /r/manga post title *includes* the text in your manga title (and "[DISC]").
@@ -26,10 +28,12 @@ You will need to list english and japanese titles to the same manga separately, 
 The unsubscribe message works the same way.
 For example:
 
-*SUBJECT:* 
-*unsubscribe*
-*BODY:*
-*kaguya-sama*
+```
+SUBJECT:
+unsubscribe
+BODY:
+kaguya-sama
+```
 
 Not that I would ever unsubscribe from kaguya-sama, but be mindful that the text matches (case-insensitively) what you had in your "subscribe" message.
 If I had put "kaguya sama" in my unsubscribe message, I would not be unsubscribed from "kaguya-sama".
@@ -40,18 +44,20 @@ ________________________________________________________________________________
 
 When there are updates to any of the manga you are subscribed to, the bot will message you with something like this:
 
-*Manga Updates:*
-*link to new kaguya-sama post*
---
-*YOUR SUBSCRIPTIONS*
-*kaguya-sama*
-*29 to JK*
---
-*INSTRUCTIONS*
-*Message me with the subject set to "subscribe" or "unsubscribe".*
-*In the body of the message, list the manga you wish to subscribe to / unsubscribe from.*
-*Separate each manga title in your list in a new line.*
-*The title is not case-sensitive.*
+```
+Manga Updates:
+link to new kaguya-sama post
+
+YOUR SUBSCRIPTIONS:
+kaguya-sama
+29 to JK
+
+INSTRUCTIONS
+Message me with the subject set to "subscribe" or "unsubscribe".
+In the body of the message, list the manga you wish to subscribe to / unsubscribe from.
+Separate each manga title in your list in a new line.
+The title is not case-sensitive.
+```
 __________________________________________________________________________________
 
 
