@@ -3,10 +3,10 @@ import os
 import importlib
 import datetime
 
+
 def _init_config() -> dict:
     return {
-        'TIMEOUT': 600,
-        'PERIOD': 600000,
+        'PERIOD': datetime.timedelta(days=3),
         'TODAY': datetime.date.today(),
 
         'NEW_CHAPTER_CODE': '[DISC]',
@@ -14,12 +14,12 @@ def _init_config() -> dict:
         'DB_MESSAGE_SUBJECT': 'SO_CALLED_DB',
         'SUB_MESSAGE_SUBJECT': 'subscribe',
         'UNSUB_MESSAGE_SUBJECT': 'unsubscribe',
-        'INSTRUCTIONS': '''Message me with the subject set to "subscribe" or "unsubscribe".\n
-                            In the body of the message, list the manga you wish to subscribe to / unsubscribe from.\n
-                            Separate each manga title in your list in a new line.\n
-                            The title is not case-sensitive. ''',
+        'INSTRUCTIONS': 'Message me with the subject set to "subscribe" or "unsubscribe".\n'+
+                            'In the body of the message, list the manga you wish to subscribe to / unsubscribe from.\n'+
+                            'Separate each manga title in your list in a new line.\n'+
+                            'The title is not case-sensitive.',
 
-        'USER_AGENT': 'Manga Reddit Bot',
+        'USER_AGENT': 'Manga Subscriber Bot',
         'CLIENT_ID': '',
         'CLIENT_SECRET': '',
         'PASS': '',
@@ -46,9 +46,9 @@ def _config_secrets() -> dict:
 # SET UP THE REDDIT CONNECTION
 def connect_to_reddit() -> (Reddit, dict):
     conf = _config_secrets()
-    return Reddit(user_agent=conf.USER_AGENT,
-                  client_id=conf.CLIENT_ID,
-                  client_secret=conf.CLIENT_SECRET,
-                  password=conf.PASS,
-                  username=conf.USERNAME), conf
+    return Reddit(user_agent=conf["USER_AGENT"],
+                  client_id=conf["CLIENT_ID"],
+                  client_secret=conf["CLIENT_SECRET"],
+                  password=conf["PASS"],
+                  username=conf["USERNAME"]), conf
 

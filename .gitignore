@@ -353,4 +353,5 @@ MigrationBackup/
 .vscode
 .idea
 venv/
-manga-reddit-bot2_venv
+manga-reddit-bot2_venv/
+app/secret_properties.py

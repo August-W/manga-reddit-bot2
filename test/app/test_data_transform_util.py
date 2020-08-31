@@ -4,8 +4,8 @@ from unittest.mock import MagicMock, patch
 from app import data_transform_util, config_service
 
 def test_format_to_writeable_db_data():
-    raw_data = {'users': [{'id': 1, 'mangoes': ['test_manga', 'test_manga2']},
-                          {'id': 2, 'mangoes': ['test_mango2']}]}
+    raw_data = [{'id': 1, 'mangoes': ['test_manga', 'test_manga2']},
+                          {'id': 2, 'mangoes': ['test_mango2']}]
     writeable_data = '1:test_manga>(u*u)>test_manga2>(u*u)>\n2:test_mango2>(u*u)>\n'
     assert data_transform_util._format_to_writeable_db_data(raw_data) == writeable_data
 

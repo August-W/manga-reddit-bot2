@@ -7,5 +7,8 @@ from app import config_service
 # TODO: NEED LAMBDA LOGGING
 def run_bot() -> None:
     r, conf = config_service.connect_to_reddit()
-    asyncio.run(app.update_subscriptions(r, conf))
+    app.update_subscriptions(r, conf)
     return None
+
+# THIS IS JUST FOR LOCAL TESTING
+run_bot()
