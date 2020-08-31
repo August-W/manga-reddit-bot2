@@ -46,7 +46,7 @@ When there are updates to any of the manga you are subscribed to, the bot will m
 
 ```
 Manga Updates:
-link to new kaguya-sama post
+[link to new kaguya-sama post]
 
 YOUR SUBSCRIPTIONS:
 kaguya-sama
