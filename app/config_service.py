@@ -4,9 +4,10 @@ import importlib
 import datetime
 
 
+# INITIALIZE BOT CONFIGURATION
 def _init_config() -> dict:
     return {
-        'PERIOD': datetime.timedelta(days=3),
+        'PERIOD': datetime.timedelta(days=1),
         'TODAY': datetime.date.today(),
 
         'NEW_CHAPTER_CODE': '[DISC]',
@@ -27,6 +28,7 @@ def _init_config() -> dict:
     }
 
 
+# ADD SECRET VALUES TO BOT CONFIGURATIONS
 def _config_secrets() -> dict:
     conf = _init_config()
     if importlib.util.find_spec('app.secret_properties') is not None:

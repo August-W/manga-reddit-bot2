@@ -1,6 +1,7 @@
-from app import data_transform_util
 from praw.models import Message
 from praw.reddit import Reddit
+
+from app import data_transform_util
 
 
 # GETS MANGA TITLES BY SUBSCRIBER FROM LATEST MESSAGES
@@ -28,11 +29,8 @@ def _fetch_and_update_so_called_db(new_subscriber_messages: list, r: Reddit, con
     db_data = _fetch_from_so_called_db(r, conf)
     db_data = data_transform_util.update(db_data, new_subscriber_messages, conf)
     writeable_db_data = data_transform_util.format_to_writeable_db_data(db_data)
-    # RUN THIS PART ASYNCHRONOUSLY
     r.redditor(conf['USERNAME']).message(conf['DB_MESSAGE_SUBJECT'],
                                          writeable_db_data)
-    print('fetch and update')
-    print(db_data)
     return db_data
 
 

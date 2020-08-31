@@ -1,4 +1,5 @@
 
+# CONVERT DB_DATA TO STRING FOR SELF-MESSAGE
 def format_to_writeable_db_data(db_data: list) -> str:
     writeable_data = ""
     for user in db_data:
@@ -9,7 +10,7 @@ def format_to_writeable_db_data(db_data: list) -> str:
     return writeable_data
 
 
-# Add or remove subscription based on message
+# ADD OR REMOVE SUBSCRIPTION BASED ON MESSAGE
 def update(db_data: list, messages: list, conf: dict) -> list:
     for message in messages:
         if message.subject.lower() == conf['UNSUB_MESSAGE_SUBJECT']:
@@ -20,6 +21,7 @@ def update(db_data: list, messages: list, conf: dict) -> list:
     return db_data
 
 
+# DONT KEEP TRACK OF USERS WHEN THEY HAVE 0 SUBSCRIPTIONS
 def _remove_users_with_no_subscriptions(db_data: list) -> list:
     remove_users = []
     for user in db_data:
@@ -29,6 +31,7 @@ def _remove_users_with_no_subscriptions(db_data: list) -> list:
     return db_data
 
 
+# ADD NEWLY SUBSCRIBED MANGA TO USER OR NEW USER
 def _update_subscribe(db_data: list, message: dict) -> list:
     lines = message.body.splitlines()
     for user in db_data:
@@ -37,22 +40,21 @@ def _update_subscribe(db_data: list, message: dict) -> list:
                 if line not in user['mangoes']:
                     user['mangoes'].append(line)
             return db_data
-    db_data.append({'name': message.author.name, 'mangoes': lines}) #JUST ADDED THIS TO ADD NEW USERS
+    db_data.append({'name': message.author.name, 'mangoes': lines})
     return db_data
 
+# REMOVE NEWLY UNSUBSCRIBED MANGA FROM USER
 def _update_unsubscribe(db_data: list, message: dict) -> list:
     print("unsubscribing")
     for user in db_data:
         if user['name'] == message.author.name:
             lines = message.body.splitlines()
-            print(lines)
             user['mangoes'] = [x for x in user['mangoes'] if x not in lines ]
-            print(user['mangoes'])
             break
     return db_data
 
 
-# init based on special message
+# INIT DB_DATA BASED ON SELF-MESSAGE
 def init_db(message: str) -> list:
     db_data = []
     lines = message.splitlines()
