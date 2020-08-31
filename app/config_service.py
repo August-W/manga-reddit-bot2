@@ -47,7 +47,9 @@ def _config_secrets() -> dict:
 
 # SET UP THE REDDIT CONNECTION
 def connect_to_reddit() -> (Reddit, dict):
+    print("CONFIGURING BOT")
     conf = _config_secrets()
+    print("CONNECTING TO REDDIT")
     return Reddit(user_agent=conf["USER_AGENT"],
                   client_id=conf["CLIENT_ID"],
                   client_secret=conf["CLIENT_SECRET"],
