@@ -348,3 +348,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+
+.vscode
+.idea
+venv/
+manga-reddit-bot2_venv/
+app/secret_properties.py
