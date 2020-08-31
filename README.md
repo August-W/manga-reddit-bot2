@@ -4,7 +4,7 @@ ________________________________________________________________________________
 
 
 This bot allows you to "subscribe" to your favorite manga on /r/manga. You can send a message to the bot account with the manga you want to subscribe to or unsubscribe from. 
-The bot runs everyday, and will message you with a links to each new chapter posted on /r/manga for all the manga you are subscribed to, so that you receive a notification. It looks for new chapters by checking any new posts containing the manga title and "[DISC]" in the post title.
+The bot runs everyday, and will message you with links to each new chapter posted on /r/manga for all the manga you are subscribed to, so that you receive a notification. It looks for new chapters by checking any new posts containing the manga title and "[DISC]" in the post title.
 __________________________________________________________________________________
 
 
