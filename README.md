@@ -10,7 +10,7 @@ ________________________________________________________________________________
 
 # HOW TO SUBSCRIBE/UNSUBSCRIBE
 
-You will need to send a message to /r/Manga-Subscriber-Bot with the subject "subscribe" or "unsubscribe". The content of the message will be a list of manga
+You will need to send a message to /u/Manga-Subscriber-Bot with the subject "subscribe" or "unsubscribe". The content of the message will be a list of manga
 For example:
 
 ```
